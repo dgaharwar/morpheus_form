@@ -8,9 +8,10 @@ terraform {
 }
 
 provider "morpheus" {
-  url      = var.morpheus_url
-  username = var.morpheus_username
-  password = var.morpheus_password
+  url          = var.morpheus_url
+#  username     = var.morpheus_username
+#  password     = var.morpheus_password
+  access_token = var.morpheus_access_token
 }
 
 variable "morpheus_url" {
@@ -18,13 +19,18 @@ variable "morpheus_url" {
   type        = string
 }
 
-variable "morpheus_username" {
-  description = "The username of the user account used to access the Morpheus platform"
-  type        = string
-}
+#variable "morpheus_username" {
+#  description = "The username of the user account used to access the Morpheus platform"
+#  type        = string
+#}
 
-variable "morpheus_password" {
-  description = "The password of the user account used to access the Morpheus platform"
+#variable "morpheus_password" {
+#  description = "The password of the user account used to access the Morpheus platform"
+#  type        = string
+#}
+
+variable "morpheus_access_token" {
+  description = "The access token of the user account used to access the Morpheus platform"
   type        = string
 }
 
