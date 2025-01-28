@@ -7,6 +7,15 @@ terraform {
   }
 }
 
+provider "morpheus" {
+  url          = "https://10.32.20.150"
+  access_token = var.morpheus_access_token
+}
+
+variable "morpheus_access_token" {
+  type = string
+}
+
 resource "morpheus_form" "main" {
   name        = "${var.prefix}VM ${var.name} 01"
   description = "Deploiement VM ${var.name}"
